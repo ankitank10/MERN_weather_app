@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import { fetchWeather } from "../actions/index";
 
-const google = window.google;
+// const google = window.google;
 class GoogleMap extends Component {
   componentDidMount()   {
     const latLng = {
