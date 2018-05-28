@@ -1,16 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Chart from '../components/chart.js';
-import GoogleMap from '../containers/googlemap';
+// import GoogleMap from '../containers/googlemap';
 import { removeCityMap } from '../actions/index';
 import { bindActionCreators } from "redux";
 import AttributeSelector from './attributeselector';
+
 const units = {
     "temp":"K",
     "pressure":"hPa",
     "humidity":"%",
     "sea_level":"hPa"
 }
+
+
 class WeatherBoard extends Component {
     constructor(props) {
         super(props);
@@ -36,16 +39,20 @@ class WeatherBoard extends Component {
             alert(this.props.errorMsg);
         }
         const cityName = cityData.city.name;
-        const countryName = cityData.city.country;
+        // const countryName = cityData.city.country;
         const chartData1 = cityData.list.map(weather => weather.main[this.state.attribute1]);
         const chartData2 = cityData.list.map(weather => weather.main[this.state.attribute2]);
         const chartData3 = cityData.list.map(weather => weather.main[this.state.attribute3]);
 
-        const { lon, lat } = cityData.city.coord;
+        // const { lon, lat } = cityData.city.coord;
         return (
             <tr key={cityName}>
                 <td>
-                    <GoogleMap lon={lon} lat={lat} city={cityName} country={countryName} />
+                    {/*
+                        Code for adding google map corrosponding to city
+                        <GoogleMap lon={lon} lat={lat} city={cityName} country={countryName} />
+                    */}
+
                     <span>{cityName}</span>
                 </td>
                 <td><Chart data={chartData1} color="red" units={this.state.unit1} /></td>
@@ -58,9 +65,6 @@ class WeatherBoard extends Component {
     attDropDownChange(e) {
         switch (e.target.name) {
             case "FirstDropdown":
-                // this.props.weather.map(() => {
-                //     this.weatherAttrMapper('FirstDropdown', e.target.value)
-                // })
                 this.setState({
                     attribute1: e.target.value,
                     unit1: units[e.target.value]
@@ -78,11 +82,11 @@ class WeatherBoard extends Component {
                     unit3: units[e.target.value]
                 });
                 break;
+            default:
         }
 
     }
     render() {
-        console.log('render');
         return (
             <table className="table table-hover">
                 <thead>

@@ -5,9 +5,6 @@ import { fetchWeather } from "../actions/index";
 
 const google = window.google;
 class GoogleMap extends Component {
-  constructor(props){
-    super(props);
-  }
   componentDidMount()   {
     const latLng = {
           lat: this.props.lat,
