@@ -1,7 +1,7 @@
 import axios from "axios";
 import types from './types'
 
-const WEATHER_API_KEY = process.env.REACT_APP_WEATHER_API_KEY;
+const WEATHER_API_KEY = "6a78596d062df78380eff5944c4e5567";
 const WEATHER_URL = `https://api.openweathermap.org/data/2.5/forecast?appid=${WEATHER_API_KEY}`;
 
 
