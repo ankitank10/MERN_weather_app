@@ -2,7 +2,7 @@ import axios from "axios";
 import types from './types'
 
 const API_KEY = "6a78596d062df78380eff5944c4e5567";
-const WEATHER_URL = `http://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
+const WEATHER_URL = `https://api.openweathermap.org/data/2.5/forecast?appid=${API_KEY}`;
 
 
 
