@@ -1,4 +1,4 @@
-# ReduxSimpleStarter
+# MERN_weather_app
 
 
 ### Getting Started
